@@ -86,7 +86,7 @@ Android (renderers - OpenGl). Works on Android Phone emulator but fails on Andro
 
 * OS：UOS 20 专业版
 * 内存：32G
-* 显卡：Geforce RTX 2080 SUPER   6g显存
+* 显卡：Geforce RTX 2080 SUPER   8g显存
 * cpu：/proc/cpuinfo
 
 ~~~
