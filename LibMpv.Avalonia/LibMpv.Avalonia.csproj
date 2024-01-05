@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;</TargetFrameworks>
+		<LangVersion>latest</LangVersion>
+		<Nullable>enable</Nullable>
+		<IsAndroid>false</IsAndroid>
+		<IsAndroid Condition="'$([MSBuild]::GetTargetPlatformIdentifier($(TargetFramework)))'=='android'">true</IsAndroid>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Avalonia" Version="11.0.6" />
+		<PackageReference Include="Serilog" Version="3.1.1" />
+		<PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\LibMpv.Client\LibMpv.Client.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="**\*.Desktop.cs" />
+		<Compile Remove="**\*.Android.cs" />
+		<None Include="**\*.Desktop.cs" />
+		<None Include="**\*.Android.cs" />
+	</ItemGroup>
+
+
+	<ItemGroup Condition="$(IsAndroid) == false">
+		<Compile Include="**\*.Desktop.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="VideoView.Android.cs" />
+	</ItemGroup>
+
+</Project>

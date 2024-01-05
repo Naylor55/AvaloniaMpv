@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+
+  
+  <ItemGroup>
+    <AvaloniaXaml Remove="LibMpv.Avalonia\**" />
+    <AvaloniaXaml Remove="LibMpv.Client\**" />
+    <AvaloniaXaml Remove="LibMpv.MVVM\**" />
+    <AvaloniaXaml Remove="mpv\**" />
+    <Compile Remove="LibMpv.Avalonia\**" />
+    <Compile Remove="LibMpv.Client\**" />
+    <Compile Remove="LibMpv.MVVM\**" />
+    <Compile Remove="mpv\**" />
+    <EmbeddedResource Remove="LibMpv.Avalonia\**" />
+    <EmbeddedResource Remove="LibMpv.Client\**" />
+    <EmbeddedResource Remove="LibMpv.MVVM\**" />
+    <EmbeddedResource Remove="mpv\**" />
+    <None Remove="LibMpv.Avalonia\**" />
+    <None Remove="LibMpv.Client\**" />
+    <None Remove="LibMpv.MVVM\**" />
+    <None Remove="mpv\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.0.6" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.6" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.6" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+
+    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LibMpv.Avalonia\LibMpv.Avalonia.csproj" />
+    <ProjectReference Include="..\LibMpv.Client\LibMpv.Client.csproj" />
+    <ProjectReference Include="..\LibMpv.MVVM\LibMpv.MVVM.csproj" />
+
+  </ItemGroup>
+</Project>

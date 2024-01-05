@@ -1,0 +1,34 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AvaloniaApplication1.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaApplication1.Views.MainView"
+                xmlns:mpv="clr-namespace:LibMpv.Avalonia;assembly=LibMpv.Avalonia"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+  <UniformGrid Rows="4" Columns="4" >
+    <mpv:VideoView MpvContext="{Binding V1}" Focusable="True" />
+    <mpv:VideoView MpvContext="{Binding V2}" Focusable="True" />
+    <mpv:VideoView MpvContext="{Binding V3}" Focusable="True" />
+    <mpv:VideoView MpvContext="{Binding V4}" Focusable="True" />
+    <mpv:VideoView MpvContext="{Binding V5}" Focusable="True" />
+    <mpv:VideoView MpvContext="{Binding V6}" Focusable="True" />
+    <mpv:VideoView MpvContext="{Binding V7}" Focusable="True" />
+    <mpv:VideoView MpvContext="{Binding V8}" Focusable="True" />
+    <mpv:VideoView MpvContext="{Binding V9}" Focusable="True" />
+    <mpv:VideoView MpvContext="{Binding V10}" Focusable="True" />
+    <mpv:VideoView MpvContext="{Binding V11}" Focusable="True" />
+    <mpv:VideoView MpvContext="{Binding V12}" Focusable="True" />
+    <mpv:VideoView MpvContext="{Binding V13}" Focusable="True" />
+    <mpv:VideoView MpvContext="{Binding V14}" Focusable="True" />
+    <mpv:VideoView MpvContext="{Binding V15}" Focusable="True" />
+    <mpv:VideoView MpvContext="{Binding V16}" Focusable="True" />
+
+  </UniformGrid>
+</UserControl>
