@@ -42,7 +42,10 @@ class Program
         else if (platformId == LibMpvPlatformID.Unix)
         {
             //var path = $"/usr/lib/x86_64-linux-gnu";
-            var path = $"/usr/local/lib";
+            //var path = $"/usr/local/lib";
+            //LibMpv.Client.LibMpv.UseLibMpv(1).UseLibraryPath(path);
+            var path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "mpv", "liunx");
+            Console.WriteLine("MPVPATH:" + path);
             LibMpv.Client.LibMpv.UseLibMpv(1).UseLibraryPath(path);
         }
         else if (platformId == LibMpvPlatformID.MacOSX)

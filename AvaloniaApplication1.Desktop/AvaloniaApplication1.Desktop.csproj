@@ -20,4 +20,35 @@
     <ProjectReference Include="..\LibMpv.Client\LibMpv.Client.csproj" />
     <ProjectReference Include="..\LibMpv.MVVM\LibMpv.MVVM.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="mpv\" />
+  </ItemGroup>
+
+
+  <ItemGroup Condition="'$(RuntimeIdentifier)' == 'linux-x64'">
+    <None Include="mpv\liunx\*.*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup Condition="'$(RuntimeIdentifier)' == 'win-x64'">
+    <None Include="mpv\windows\*.*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="mpv\windows\include\mpv\*.*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(RuntimeIdentifier)' == 'osx-x64'">
+    <None Include="mpv\macos\amd64\*.*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(RuntimeIdentifier)' == 'osx-arm64'">
+    <None Include="mpv\macos\arm64\*.*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
