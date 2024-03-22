@@ -22,6 +22,7 @@
     * linux：AvaloniaMpv\AvaloniaApplication1.Desktop\mpv\liunx\libmpv.so.1
     * macos：AvaloniaMpv\AvaloniaApplication1.Desktop\mpv\macos\arm64\libmpv.dylib 或者 AvaloniaMpv\AvaloniaApplication1.Desktop\mpv\macos\amd64\libmpv.dylib
     * 路径可以随意配置，只要能找到对应的动态链接库就行。以linux举例，若已经在机器上面安装了mpv（通过官网下载安装包https://mpv.io/installation/  或者通过linux包管理器下载），也可以将path指向/usr/lib/x86_64-linux-gnu 或者 /usr/local/lib
+    * 针对MacOS - ARM 版本，即M1/M2 等系列芯片，发现运行时加载动态链接库并不生效，无法播放视频，这种情况可以先手动在MacOS中安装mpv（参考：https://mpv.io/installation/），然后程序直接调用系统中安装的mpv。
 * 主启动程序起来后将加载 AvaloniaApplication1.views.MainView 
 
 
